@@ -1,0 +1,41 @@
+#title {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    color: maroon;
+}
+
+#assignmentsDiv {
+    position: relative;
+    bottom: 20px;
+}
+
+.labels {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input {
+    width: 100px;
+    margin-left: 10px;
+}
+
+.button {
+    height: 30px;
+    color: maroon;
+}
+
+#clearButton {
+    height: 30px;
+}
+
+.current_pot {
+    font-size: 20px;
+    color: maroon;
+}
+
+#answer, #potential {
+    font-size: 20px;
+    color: maroon;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Class Grade Calculator</title>
+    <link href="stylesClass.css" rel="stylesheet">
+</head>
+<body>
+    <label id="title">
+        Class Grade Calculator
+    </label>
+    <br>
+    
+    <div id="allAssignments">
+        <div id="assignmentsDiv1">
+        <label class="labels">Assignment 1</label>
+        <b style="font-size: 13px">(i.e Homework 1, Exam 1, Project 1, etc...)</b>
+        <br>
+        <input type="text" Placeholder="Grade..." id="grade 1">
+        <b>%</b>
+        <br>
+        <input type="text" Placeholder="Weight..." id="weight 1">
+        <b>%</b>
+        </div>
+    
+        <div id="assignmentsDiv"></div>
+    </div>
+    
+    <br>
+    <button class="button" onclick="calculateGrade()">Calculate Current Grade</button>
+    <button class="button" onclick="addAssignment()">Add Assignment</button>
+    <button id="clearButton" onclick="clearAll()">Clear All</button>
+
+    <div id="answerDiv">
+        <br>
+        <b class="current_pot">Current Class Grade: </b>
+        <b id="answer">??</b>
+        <br>
+        <b class="current_pot">Max Potential Grade: </b>
+        <b id="potential">??</b>
+    </div>
+    
+</body>
+<script src="scriptClass.js"></script>
+</html>
