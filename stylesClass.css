@@ -26,7 +26,7 @@ input {
     color: maroon;
 }
 
-#clearButton {
+.clearButton {
     height: 30px;
 }
 
