@@ -12,14 +12,15 @@ function calculateGrade() {
     for (i = 1; i<=numAssignments; i++) {
         let assignmentGrade = document.getElementById("grade " + i);
         let assignmentWeight = document.getElementById("weight " + i);
-        console.log(assignmentGrade.value);
 
+        //true if letters in input, false if only digits
         let isGradeNum = isNaN(document.getElementById("grade " + i).value);
         let isWeightNum = isNaN(document.getElementById("weight " + i).value);
 
+        
         if (isGradeNum == true || isWeightNum == true || assignmentGrade.value == "" || assignmentWeight.value == "") {
             inputError = true;
-            alert("Grade and weight of assignments must be filled in and be integers");
+            alert("Grade and weight of assignments must be filled in. Inputs must contain only digits");
             break;
         } else {
             weightDec = assignmentWeight.value / 100;
@@ -89,15 +90,18 @@ function addAssignment() {
     let percent2 = document.createElement("B");
     percent1.innerHTML = "%";
     percent2.innerHTML = "%";
-    percent1.id = "percent1";
-    percent2.id = "percent2";
+    percent1.id = "percent1 " + numAssignments;
+    percent2.id = "percent2 " + numAssignments;
+
+    var newBR = document.createElement("BR");
+    console.log(newBR)
 
     //creating assignmentsDiv variable
     let assignmentsDiv = document.getElementById("assignmentsDiv");
 
     //appending everything from earlier into assignmentsDiv
-    assignmentsDiv.appendChild(document.createElement("BR"));
-    assignmentsDiv.appendChild(document.createElement("BR"));
+    assignmentsDiv.appendChild(newBR);
+    assignmentsDiv.appendChild(newBR);
     assignmentsDiv.appendChild(newLabel);
 
     assignmentsDiv.appendChild(document.createElement("BR"));
@@ -133,6 +137,10 @@ function removeElement(elementID) {
     element.parentNode.removeChild(element);
 }
 
-function removeAssingment() {
-    
+function removeAssignment() {
+    removeElement("grade " + numAssignments);
+    removeElement("weight " + numAssignments);
+    removeElement("label " + numAssignments);
+    removeElement("percent1 " + numAssignments);
+    removeElement("percent2 " + numAssignments);
 }
