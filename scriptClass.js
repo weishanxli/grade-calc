@@ -93,54 +93,48 @@ function addAssignment() {
     percent1.id = "percent1 " + numAssignments;
     percent2.id = "percent2 " + numAssignments;
 
-    var newBR = document.createElement("BR");
-    console.log(newBR)
-
-    //creating assignmentsDiv variable
-    let assignmentsDiv = document.getElementById("assignmentsDiv");
+    //creating new assignmentDiv to append to allAssignmentsDivs
+    let newAssignmentDiv = document.createElement("DIV");
+    newAssignmentDiv.id = "assignmentsDiv " + numAssignments;
+    document.getElementById("allAssignmentsDiv").appendChild(newAssignmentDiv);
 
     //appending everything from earlier into assignmentsDiv
-    assignmentsDiv.appendChild(newBR);
-    assignmentsDiv.appendChild(newBR);
-    assignmentsDiv.appendChild(newLabel);
+    newAssignmentDiv.appendChild(document.createElement("BR"));
+    newAssignmentDiv.appendChild(newLabel);
 
-    assignmentsDiv.appendChild(document.createElement("BR"));
-    assignmentsDiv.appendChild(newGrade);
-    assignmentsDiv.appendChild(percent1);
+    newAssignmentDiv.appendChild(document.createElement("BR"));
+    newAssignmentDiv.appendChild(newGrade);
+    newAssignmentDiv.appendChild(percent1);
     
-    assignmentsDiv.appendChild(document.createElement("BR"));
-    assignmentsDiv.appendChild(newWeight);
-    assignmentsDiv.appendChild(percent2);
+    newAssignmentDiv.appendChild(document.createElement("BR"));
+    newAssignmentDiv.appendChild(newWeight);
+    newAssignmentDiv.appendChild(percent2);
 
 }
 
 //clears everything back to one assignment
 function clearAll() {
-    //removing current assignmentsDiv, resetting numAssignments and total
-    removeElement("assignmentsDiv");
+    for (i = numAssignments; i > 1; i--) {
+        removeElement("assignmentsDiv " + i);
+    }
     numAssignments = 1;
     totalScore = 0;
     document.getElementById("grade 1").value = null;
     document.getElementById("weight 1").value = null;
     document.getElementById("answer").innerHTML = "??";
     document.getElementById("potential").innerHTML = "??";
-    
-    //creating new assignmentsDiv
-    let newAssignmentsDiv = document.createElement("DIV");
-    newAssignmentsDiv.id = "assignmentsDiv";
-    document.getElementById("allAssignments").appendChild(newAssignmentsDiv);
+}
+
+//removes the last assignment
+function removeAssignment() {
+    if (numAssignments > 1) {
+        removeElement("assignmentsDiv " + numAssignments);
+        numAssignments--;
+    }
 }
 
 //removes element with id
 function removeElement(elementID) {
     let element = document.getElementById(elementID);
     element.parentNode.removeChild(element);
-}
-
-function removeAssignment() {
-    removeElement("grade " + numAssignments);
-    removeElement("weight " + numAssignments);
-    removeElement("label " + numAssignments);
-    removeElement("percent1 " + numAssignments);
-    removeElement("percent2 " + numAssignments);
 }
