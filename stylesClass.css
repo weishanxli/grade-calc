@@ -12,13 +12,24 @@
 }
 
 .labels {
+    font-size: 25px;
+    font-weight: bold;
+    color: maroon;
+}
+
+.sublabels {
+    margin-left: 10px;
     font-size: 20px;
     font-weight: bold;
 }
 
+.subButtons{
+    color: maroon;
+}
+
 input {
     width: 100px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .button {
@@ -31,11 +42,6 @@ input {
 }
 
 .current_pot {
-    font-size: 20px;
-    color: maroon;
-}
-
-#answer, #potential {
     font-size: 20px;
     color: maroon;
 }

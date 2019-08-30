@@ -16,31 +16,45 @@
     <br>
     
     <div id="assignmentsDiv1">
-        <label class="labels">Assignment 1</label>
-        <b style="font-size: 13px">(i.e Homework 1, Exam 1, Project 1, etc...)</b>
+        <label class="labels">Assignment Category 1</label>
+        <input type="text" id="categoryName 1" Placeholder="Name..."> <b style="font-size: 13px">(i.e Homeworks, Exams, Projects, etc...)</b>
         <br>
-        <input type="text" Placeholder="Grade..." id="grade 1">
-        <b>%</b>
+        <input type="text" id="categoryWeight 1" Placeholder="Total Weight..."> <b>%</b>
         <br>
-        <input type="text" Placeholder="Weight..." id="weight 1">
-        <b>%</b>
+        <div id="subassignmentsDiv 1">
+            <label class="sublabels">Subassignment 1</label>
+            <br>
+            <input type="text" Placeholder="Grade..." id="subGrade 11">
+            <b>%</b>
+            <br>
+            <input type="text" Placeholder="Weight..." id="subWeight 11"> 
+            <b>%</b>
+        </div>
+        <br>
+        <button class="subButtons" onclick="addSubassignment(1)">Add Subassignment</button>
+        <button class="subButtons" onclick="removeSubassignment(1)">Remove Subassignment</button>
     </div>
     
     <div id="allAssignmentsDiv"></div>
     
     <br>
+    <b>Have a Goal Grade??</b>
+    <br>
+    <input type="text" Placeholder="Goal Grade..." id="goalGradeInput"> <b>%</b>
+   
+    <br><br>
     <button class="button" onclick="calculateGrade()">Calculate Current Grade</button>
-    <button class="button" onclick="addAssignment()">Add Assignment</button>
-    <button class = "clearButton" onclick="removeAssignment()">Remove an Assignment</button>
-    <button class="clearButton" onclick="clearAll()">Clear All</button>
+    <button class="button" onclick="addAssignment()">Add Assignment Category</button>
+    <button class = "button" onclick="removeAssignment()">Remove an Assignment Category</button>
+    <button class="button" onclick="clearAll()">Clear All</button>
 
     <div id="answerDiv">
+        <div id="subAnswerDiv"></div>
         <br>
-        <b class="current_pot">Current Class Grade: </b>
-        <b id="answer">??</b>
+        <b class="current_pot" id="totalGrade">Current Class Grade: ??</b>
         <br>
-        <b class="current_pot">Max Potential Grade in Class: </b>
-        <b id="potential">??</b>
+        <b class="current_pot" id="potentialGrade">Max Potential Grade in Class: ??</b>
+        
     </div>
     
 </body>
